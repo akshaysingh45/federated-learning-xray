@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI X-Ray Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- Overlay -->
+<div class="overlay"></div>
+
+<!-- Navbar -->
+<div class="navbar">
+    <h2>🧠 AI Medical System</h2>
+    <p>Pneumonia Detection using AI</p>
+</div>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="card">
+
+        <h1>🩺 Chest X-Ray Analyzer</h1>
+        <p class="subtitle">Upload X-ray image & detect Pneumonia instantly</p>
+
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit">Analyze Image</button>
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <h2>{{ result }}</h2>
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+
+<!-- Floating Social Icons -->
+<div class="social-icons">
+    <a href="https://github.com/akshaysingh45" target="_blank">
+        <img src="{{ url_for('static', filename='github.png') }}">
+    </a>
+    <a href="https://www.linkedin.com/in/akshay-kumar-aa1373268/" target="_blank">
+        <img src="{{ url_for('static', filename='linkedin.png') }}">
+    </a>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p>© 2026 AI Healthcare Project | MCA Final Year</p>
+</div>
+
+</body>
+</html>
